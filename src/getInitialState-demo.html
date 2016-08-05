@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getInitialState</title>
+    <script src="../bower_components/react/react.min.js"></script>
+    <script src="../bower_components/react/react-dom.min.js"></script>
+    <script src="../bower_components/babel/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    let LikeButton = React.createClass({
+        getInitialState: function () {
+            return {liked: false}
+        },
+        handleClick: function () {
+          this.setState({liked: !this.state.liked});
+        },
+        render: function () {
+            let text = this.state.liked ? 'like' : 'haven\'t like';
+
+            return(
+                    <p onClick={this.handleClick}>
+                        You {text} this.Click to change!
+                    </p>
+            )
+        }
+    });
+
+    ReactDOM.render(
+            <LikeButton/>,
+            document.getElementById('example')
+    )
+
+</script>
+</body>
+</html>
