@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getDefalutProps-demo</title>
+    <script src="../bower_components/react/react.min.js"></script>
+    <script src="../bower_components/react/react-dom.min.js"></script>
+    <script src="../bower_components/babel/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+//    class GetDefulatPropsDemo extends React.Component {
+//        getDefaultProps() {
+//            return {
+//                name: 'getDefulatProps',
+//                git: 'wyb1995'
+//            }
+//        }
+//
+//        render() {
+//            return (
+//                    <div>Hello,{this.props.name},git username is {this.props.git}</div>
+//            )
+//        };
+//    }
+    let GetDefulatPropsDemo = React.createClass({
+        getDefaultProps: function () {
+            return{
+                name: 'wyb',
+                git: 'wyb1995'
+            }
+        },
+        render:function () {
+            return (
+                    <div>Hello,{this.props.name},git username is {this.props.git}</div>
+            )
+        }
+    });
+    ReactDOM.render(
+            <GetDefulatPropsDemo/>,
+            document.getElementById('example')
+    )
+</script>
+</body>
+</html>
